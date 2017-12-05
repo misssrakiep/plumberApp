@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>bookingPage</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <link rel="stylesheet" href="plumber.css">
+  </head>
+  <body>
+    <div class="topnav" id="myTopnav">
+      <a href="index.html">Home</a>
+      <a href="booking.html" class="active">See Bookings</a>
+      <a href="register.html">Register</a>
+    </div>
+    <center>
+<div class="loginHeader">
+  <input type="text" class="login"> <button class="loginBtn" type="button" name="button">See Bookings</button>
+</div>
+
+</center>
+<div class="bookingCard">
+
+</div>
+
+      <script type="text/handlebars-x" class="plumberTemp">
+      {{#if plumbers}}
+      <h2>{{plumbers.fullName}}</h2>
+      <table>
+      <tr>
+      <th>Day:</th>
+      <th>Slot:</th>
+      <th>Client:</th>
+      <th>Client contact:</th>
+      </tr>
+      {{#if plumbers.bookings}}
+      {{#each plumbers.bookings}}
+      <tr>
+      <td>{{this.day}}</td>
+      <td>{{this.slot}}</td>
+      <td>{{this.clientName}}</td>
+      <td>{{this.clientContact}}</td>
+      </tr>
+      {{/each}}
+      {{else}}
+      <h5>{{plumbers.fullName}} currently has no bookings</h5>
+      {{/if}}
+      {{/if}}
+      </table>
+      </script>
+
+        <script type="text/javascript" src="handlebars/handlebars-v4.0.10.js"></script>
+        <script src="booking.js" charset="utf-8"></script>
+
+  </body>
+</html>

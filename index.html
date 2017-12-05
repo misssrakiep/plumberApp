@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>PlumberApp</title>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <link rel="stylesheet" href="plumber.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="topnav" id="myTopnav">
+      <a href="index.html" class="active">Home</a>
+      <a href="booking.html">See Bookings</a>
+      <a href="register.html">Register</a>
+    </div>
+<center>
+  <div class="header">
+    <table>
+      <tr>
+        <td>
+<img src="plumbing-vector-icons.jpg" alt="" height="100px">
+        </td>
+        <td>
+          <h1>
+            Fix-A-Leak
+          </h1>
+        </td>
+      </tr>
+    </table>
+  </div>
+    <div class="plumberCard">
+
+      <br>
+    </div>
+</center>
+
+  <script type="text/handlebars-x" class="plumberTemp">
+  {{#if plumbers}} {{#each plumbers}}
+  <div class="plumber">
+  <h4> {{this.fullName}}</h4>
+  <h5>{{this.specialise}}</h5>
+  <hr>
+  <img class="image" src="plumber-icon.jpg" alt="plumber" style="width: 10em; margin: 0.5em;"><br>
+
+  <form class="booking">
+  <b style="display: none">ID:</b><input style="display: none" type="text" value="{{this._id}}" class="id"><br>
+  <b>Day:</b>
+  <br><input type="text" name="day" class="day" required><br>
+  <b>Slot:</b>
+  <br> <input type="text" name="slot" class="slot" required><br>
+  <b>Client name:</b>
+  <br> <input type="text" name="clientName" class="clientName" required><br>
+  <b>Client contact:</b>
+  <br> <input type="text" name="clientContact" class="clientContact" required><br>
+  </form>
+  <button class="bookPlumber" type="button" name="button">Book this Plumber</button>
+
+  </div>
+  {{/each}} {{else}}
+  <h1>No plumbers available right now, please try again later<h1>
+  <br>
+  {{/if}}
+  </script>
+  <br>
+
+
+
+</div>
+    <script type="text/javascript" src="handlebars/handlebars-v4.0.10.js"></script>
+    <script src="plumber.js" charset="utf-8"></script>
+  </body>
+</html>

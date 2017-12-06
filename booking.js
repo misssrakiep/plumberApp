@@ -19,9 +19,6 @@ $(document).ready(function() {
           });
           console.log(plumbers);
           }
-          else {
-            alert('This plumber does not exist.')
-          }
       }
     });
   })

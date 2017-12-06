@@ -18,28 +18,27 @@ $(document).ready(function() {
 
 
 $('.plumberCard').on('click', function(){
-
   var slot = document.querySelector('.slot');
   var day = document.querySelector('.day');
   var id = document.querySelector('.id');
+  var clientName = document.querySelector('.clientName');
   $.ajax({
     type: "POST",
-    url: "https://plumber-app-api.herokuapp.com/api/plumbers/" + id.value +"/slot/" + slot.value + "/day/" + day.value,
-    dataType: "json",
+    url: "http://plumber-app-api.herokuapp.com/api/plumbers/" + id.value +"/slot/" + slot.value + "/day/" + day.value + "/client/" + clientName.value,
+    dataType: "apllication/json",
+    data: {
+      slot: slot.value,
+      day: day.value,
+      clientName : clientName.value
+    },
     success: function(plumbers) {
+      alert('Your booking has been processed!')
       document.querySelector('.plumberCard').innerHTML = plumberTemp({
         plumbers: plumbers
       })
-      alert('Your booking has been processed!')
       console.log('Plumber booked');
       location.reload();
     }
   })
 });
-
-
-
-
-
-
 }) //END

@@ -27,31 +27,30 @@
       <script type="text/handlebars-x" class="plumberTemp">
       {{#if plumbers}}
       <h2>{{plumbers.fullName}}</h2>
+      {{else}}
+      <h3>Oops, looks like this plumber does not exist.</h3>
+      {{/if}}
+      {{#if plumbers}}
       {{#if plumbers.bookings}}
       <table>
       <tr>
       <th>Day:</th>
       <th>Slot:</th>
       <th>Client:</th>
-      <th>Client contact:</th>
       </tr>
       {{#each plumbers.bookings}}
       <tr>
       <td>{{this.day}}</td>
       <td>{{this.slot}}</td>
       <td>{{this.clientName}}</td>
-      <td>{{this.clientContact}}</td>
       </tr>
       {{/each}}
       {{else}}
-      <h3>Oops, looks like this plumber does not exist.</h3>
-      {{/if}}
-      {{else}}
       <h5>{{plumbers.fullName}} currently has no bookings</h5>
+      {{/if}}
       {{/if}}
       </table>
       </script>
-
         <script type="text/javascript" src="handlebars/handlebars-v4.0.10.js"></script>
         <script src="booking.js" charset="utf-8"></script>
 </div>

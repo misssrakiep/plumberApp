@@ -40,7 +40,6 @@
   {{#if plumbers}} {{#each plumbers}}
   <div class="plumber">
   <h4> {{this.fullName}}</h4>
-  <h5>{{this.specialise}}</h5>
   <hr>
   <img class="image" src="plumber-icon.jpg" alt="plumber" style="width: 10em; margin: 0.5em;"><br>
 
@@ -49,11 +48,9 @@
   <b>Day:</b>
   <br><input type="text" name="day" class="day" required><br>
   <b>Slot:</b>
-  <br> <input type="text" name="slot" class="slot" required><br>
+  <br><input type="text" name="slot" class="slot" required><br>
   <b>Client name:</b>
   <br> <input type="text" name="clientName" class="clientName" required><br>
-  <b>Client contact:</b>
-  <br> <input type="text" name="clientContact" class="clientContact" required><br>
   </form>
   <button class="bookPlumber" type="button" name="button">Book this Plumber</button>
 

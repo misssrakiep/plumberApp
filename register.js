@@ -6,14 +6,17 @@ $(document).ready(function() {
     $.ajax({
       type: "POST",
       url: "https://plumber-app-api.herokuapp.com/api/plumbers",
-      dataType: "application/json",
+      dataType: "json",
       data: {
         fullName: fullName.value
       },
-      success: function() {
-        alert('You have successfully registered! Thank you!')
-        console.log(arguments);
+      success: function(plumber) {
+        console.log(plumber);
+alert('You are now a registered plumber!')
         location.reload();
+      },
+      error: function() {
+        console.log("something went wrong");
       }
     })
   })

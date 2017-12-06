@@ -26,6 +26,7 @@
       <script type="text/handlebars-x" class="plumberTemp">
       {{#if plumbers}}
       <h2>{{plumbers.fullName}}</h2>
+      {{#if plumbers.bookings}}
       <table>
       <tr>
       <th>Day:</th>
@@ -33,7 +34,6 @@
       <th>Client:</th>
       <th>Client contact:</th>
       </tr>
-      {{#if plumbers.bookings}}
       {{#each plumbers.bookings}}
       <tr>
       <td>{{this.day}}</td>

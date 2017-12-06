@@ -8,7 +8,7 @@ console.log("====");
       var baseUrl = "https://plumber-app-api.herokuapp.com";
     $.ajax({
       type: "POST",
-      url: "http://plumber-app-api.herokuapp.com/api/plumbers",
+      url: "https://plumber-app-api.herokuapp.com/api/plumbers",
       dataType: "application/json",
       data: {
         fullName: fullName.value,

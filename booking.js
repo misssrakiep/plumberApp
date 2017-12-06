@@ -10,7 +10,7 @@ $(document).ready(function() {
     var login = document.querySelector('.login').value;
     $.ajax({
       type: "GET",
-      url: "http://plumber-app-api.herokuapp.com/api/plumbers/" + login,
+      url: "https://plumber-app-api.herokuapp.com/api/plumbers/" + login,
       dataType: "json",
       success: function(plumbers) {
         document.querySelector('.bookingCard').innerHTML = plumberTemp({

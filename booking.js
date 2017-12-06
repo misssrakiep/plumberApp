@@ -13,10 +13,15 @@ $(document).ready(function() {
       url: "https://plumber-app-api.herokuapp.com/api/plumbers/" + login,
       dataType: "json",
       success: function(plumbers) {
-        document.querySelector('.bookingCard').innerHTML = plumberTemp({
-          plumbers: plumbers
-        });
-        console.log(plumbers);
+        if(plumbers){
+          document.querySelector('.bookingCard').innerHTML = plumberTemp({
+            plumbers: plumbers
+          });
+          console.log(plumbers);
+          }
+          else {
+            alert('This plumber does not exist.')
+          }
       }
     });
   })

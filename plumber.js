@@ -24,7 +24,7 @@ $('.plumberCard').on('click', function(){
   var clientName = document.querySelector('.clientName');
   $.ajax({
     type: "POST",
-    url: "http://plumber-app-api.herokuapp.com/api/plumbers/" + id.value +"/slot/" + slot.value + "/day/" + day.value + "/client/" + clientName.value,
+    url: "https://plumber-app-api.herokuapp.com/api/plumbers/" + id.value +"/slot/" + slot.value + "/day/" + day.value + "/client/" + clientName.value,
     dataType: "apllication/json",
     data: {
       slot: slot.value,

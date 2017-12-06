@@ -6,7 +6,7 @@ $(document).ready(function() {
       var fullName = document.querySelector('.fullName');
     $.ajax({
       type: "POST",
-      url: "http://plumber-app-api.herokuapp.com/api/plumbers",
+      url: "https://plumber-app-api.herokuapp.com/api/plumbers",
       dataType: "application/json",
       data: {
         fullName: fullName.value

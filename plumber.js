@@ -6,7 +6,7 @@ $(document).ready(function() {
   //display all plumbers on the home page
   $.ajax({
     type: "GET",
-    url: "https://plumber-app-api.herokuapp.com/api/home",
+    url: "http://plumber-app-api.herokuapp.com/api/home",
     dataType: "json",
     success: function(plumbers) {
       console.log(plumbers);
@@ -24,7 +24,7 @@ $('.plumberCard').on('click', function(){
   var id = document.querySelector('.id');
   $.ajax({
     type: "POST",
-    url: "https://plumber-app-api.herokuapp.com/api/plumbers/" + id.value +"/slot/" + slot.value + "/day/" + day.value,
+    url: "http://plumber-app-api.herokuapp.com/api/plumbers/" + id.value +"/slot/" + slot.value + "/day/" + day.value,
     dataType: "json",
     success: function(plumbers) {
       document.querySelector('.plumberCard').innerHTML = plumberTemp({
